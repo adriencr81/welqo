@@ -1,7 +1,7 @@
 # progress.md — Suivi de progression
 
 _Claude Code met à jour ce fichier automatiquement après chaque session._
-_Dernière mise à jour : J5 — Sprint 5 terminé_
+_Dernière mise à jour : J6 — Landing page terminée_
 
 ---
 
@@ -15,7 +15,7 @@ _Dernière mise à jour : J5 — Sprint 5 terminé_
 | Sprint 3 — Éditeur | 🟢 | Terminé |
 | Sprint 4 — Guide public + QR | 🟢 | Terminé |
 | Sprint 5 — Paiement LTD | 🟢 | Terminé |
-| Landing page | 🔴 | |
+| Landing page | 🟢 | Terminée |
 | Déploiement production | 🔴 | |
 
 ---
@@ -88,15 +88,16 @@ _Dernière mise à jour : J5 — Sprint 5 terminé_
 
 ## Landing page
 
-- [ ] Hero section
-- [ ] Section problème
-- [ ] Démo produit (GIF ou vidéo)
-- [ ] Features 3 colonnes
-- [ ] Tableau comparaison
-- [ ] FAQ
-- [ ] CTA final avec compteur de places
-- [ ] Page /alternatives/touchstay
-- [ ] Meta tags SEO
+- [x] Hero section (headline + CTA + social proof early bird)
+- [x] Section problème ("Vous connaissez ça ?")
+- [x] Démo produit (mockup éditeur + phone, pas de GIF pour MVP)
+- [x] Features 3 colonnes (Ultra-simple / Hors-ligne / À vie)
+- [x] Tableau comparaison (Welqo vs TouchStay vs Hostfully)
+- [x] Témoignages (3 placeholders)
+- [x] FAQ (6 questions, details/summary HTML natif)
+- [x] CTA final avec mention early bird
+- [x] Meta tags SEO (title, description, OG)
+- [ ] Page /alternatives/touchstay (post-MVP ou prochaine session)
 
 ---
 
