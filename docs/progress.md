@@ -1,7 +1,7 @@
 # progress.md — Suivi de progression
 
 _Claude Code met à jour ce fichier automatiquement après chaque session._
-_Dernière mise à jour : J3 — Sprint 3 terminé_
+_Dernière mise à jour : J5 — Sprint 5 terminé_
 
 ---
 
@@ -13,8 +13,8 @@ _Dernière mise à jour : J3 — Sprint 3 terminé_
 | Sprint 1 — Fondations | 🟢 | Terminé — pushé sur GitHub |
 | Sprint 2 — Propriétés | 🟢 | Terminé |
 | Sprint 3 — Éditeur | 🟢 | Terminé |
-| Sprint 4 — Guide public + QR | 🔴 | |
-| Sprint 5 — Paiement LTD | 🔴 | |
+| Sprint 4 — Guide public + QR | 🟢 | Terminé |
+| Sprint 5 — Paiement LTD | 🟢 | Terminé |
 | Landing page | 🔴 | |
 | Déploiement production | 🔴 | |
 
@@ -62,27 +62,27 @@ _Dernière mise à jour : J3 — Sprint 3 terminé_
 
 ## Sprint 4 — Guide public + QR
 
-- [ ] Page publique `/g/[slug]`
-- [ ] Design mobile-first
-- [ ] Bouton copie Wi-Fi
-- [ ] Tous les rendus de sections côté public
-- [ ] Bouton Publier/Dépublier
-- [ ] Génération QR code
-- [ ] Page QR dans dashboard
-- [ ] Téléchargement QR en PNG
-- [ ] Service worker offline
+- [x] Page publique `/g/[slug]`
+- [x] Design mobile-first
+- [x] Bouton copie Wi-Fi (+ code porte checkin)
+- [x] Tous les rendus de sections côté public
+- [x] Bouton Publier/Dépublier (déjà dans GuideEditor Sprint 3)
+- [x] Génération QR code
+- [x] Page QR dans dashboard
+- [x] Téléchargement QR en PNG
+- [x] Service worker offline (@ducanh2912/next-pwa)
 
 ---
 
 ## Sprint 5 — Paiement LTD
 
-- [ ] Produit créé dans Lemon Squeezy
-- [ ] Page pricing landing
-- [ ] Intégration bouton de paiement
-- [ ] Webhook Lemon Squeezy
-- [ ] Mise à jour plan dans Supabase
-- [ ] Gating features (free vs LTD)
-- [ ] Email confirmation (Resend)
+- [ ] Produit créé dans Lemon Squeezy (action manuelle dans le dashboard LS)
+- [x] Page pricing `/pricing` dans le dashboard
+- [x] Bouton de paiement → checkout LS avec user_id en custom data
+- [x] Webhook `/api/webhooks/lemonsqueezy` avec vérification HMAC-SHA256
+- [x] Mise à jour plan dans Supabase (plan = 'ltd')
+- [x] Gating features (free = 1 propriété max, LTD = illimité)
+- [x] Email confirmation (Resend — `ltdConfirmationEmail`)
 
 ---
 
@@ -109,6 +109,12 @@ _(à remplir au fur et à mesure)_
 _(Claude documente ici les choix importants pour les sessions suivantes)_
 
 - **Slug** : généré depuis le nom de la propriété, suffixe aléatoire si collision
-- **Offline** : next-pwa (workbox) — cache la page guide complète au premier chargement
+- **Offline** : @ducanh2912/next-pwa (workbox) — fork maintenu de next-pwa, désactivé en dev, cache la page guide au premier chargement
+- **Page publique** : Server Components + details/summary HTML natif pour l'accordéon (fonctionne sans JS)
+- **Markdown** : remark + remark-html, rendu côté serveur pour les sections checkin/checkout/appliances/custom
+- **QR Code** : qrcode npm, génération côté client, export PNG via canvas.toDataURL
+- **Paiement** : Lemon Squeezy — checkout URL avec `checkout[custom][user_id]` pour identifier l'acheteur côté webhook
+- **Webhook LS** : vérification signature HMAC-SHA256 via Web Crypto API (Edge compatible)
+- **Gating** : plan free = 1 propriété max, vérification dans Server Action `createProperty` + banner dans la liste
 - **Drag & drop** : dnd-kit (plus léger que react-beautiful-dnd, maintenu activement)
 - **Éditeur texte** : pas de rich text editor en MVP — textarea simple + rendu Markdown avec `remark`

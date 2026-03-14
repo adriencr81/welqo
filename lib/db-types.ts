@@ -1,3 +1,15 @@
+export type Plan = 'free' | 'ltd' | 'solo' | 'pro' | 'agency'
+
+export interface Profile {
+  id: string
+  email: string
+  plan: Plan
+  ltd_activated_at: string | null
+  lemonsqueezy_customer_id: string | null
+  lemonsqueezy_order_id: string | null
+  created_at: string
+}
+
 export interface Section {
   id: string
   property_id: string

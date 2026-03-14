@@ -1,29 +1,62 @@
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
-import { Plus, Home, Globe, EyeOff } from 'lucide-react'
+import { Plus, Home, Globe, EyeOff, Zap } from 'lucide-react'
+
+const FREE_LIMIT = 1
 
 export default async function PropertiesPage() {
   const supabase = await createClient()
-  const { data: properties } = await supabase
-    .from('properties')
-    .select('*')
-    .order('created_at', { ascending: false })
+  const { data: { user } } = await supabase.auth.getUser()
+
+  const [{ data: properties }, { data: profile }] = await Promise.all([
+    supabase.from('properties').select('*').order('created_at', { ascending: false }),
+    supabase.from('profiles').select('plan').eq('id', user!.id).single(),
+  ])
+
+  const isLtd = profile?.plan === 'ltd'
+  const atLimit = !isLtd && (properties?.length ?? 0) >= FREE_LIMIT
 
   return (
     <div className="p-8">
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Mes propriétés</h1>
           <p className="text-gray-500 mt-1">Gérez vos guides d&apos;accueil</p>
         </div>
-        <Link
-          href="/properties/new"
-          className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-        >
-          <Plus className="h-4 w-4" />
-          Nouvelle propriété
-        </Link>
+        {atLimit ? (
+          <Link
+            href="/pricing"
+            className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            <Zap className="h-4 w-4" />
+            Passer en LTD
+          </Link>
+        ) : (
+          <Link
+            href="/properties/new"
+            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          >
+            <Plus className="h-4 w-4" />
+            Nouvelle propriété
+          </Link>
+        )}
       </div>
+
+      {/* Upgrade banner — plan free avec 1 propriété */}
+      {atLimit && (
+        <div className="mb-6 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 flex items-center justify-between gap-4">
+          <p className="text-sm text-amber-800">
+            <span className="font-semibold">Plan gratuit :</span> 1 propriété maximum.
+            Passez en accès à vie pour des propriétés illimitées.
+          </p>
+          <Link
+            href="/pricing"
+            className="shrink-0 text-sm font-semibold text-amber-700 hover:text-amber-900 underline"
+          >
+            59€ à vie →
+          </Link>
+        </div>
+      )}
 
       {!properties || properties.length === 0 ? (
         <div className="text-center py-24">

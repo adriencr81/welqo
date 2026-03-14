@@ -22,6 +22,8 @@ async function ensureUniqueSlug(
   return `${base}-${suffix}`
 }
 
+const FREE_LIMIT = 1
+
 async function createProperty(formData: FormData) {
   'use server'
 
@@ -31,6 +33,16 @@ async function createProperty(formData: FormData) {
   } = await supabase.auth.getUser()
 
   if (!user) redirect('/login')
+
+  // Vérification du plan — free limité à 1 propriété
+  const [{ data: profile }, { count }] = await Promise.all([
+    supabase.from('profiles').select('plan').eq('id', user.id).single(),
+    supabase.from('properties').select('id', { count: 'exact', head: true }).eq('user_id', user.id),
+  ])
+
+  if (profile?.plan !== 'ltd' && (count ?? 0) >= FREE_LIMIT) {
+    redirect('/pricing')
+  }
 
   const name = (formData.get('name') as string).trim()
   const description = (formData.get('description') as string | null)?.trim() || null
