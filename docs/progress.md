@@ -1,7 +1,7 @@
 # progress.md — Suivi de progression
 
 _Claude Code met à jour ce fichier automatiquement après chaque session._
-_Dernière mise à jour : J0 — Projet initialisé_
+_Dernière mise à jour : J1 — Sprint 1 terminé_
 
 ---
 
@@ -10,7 +10,7 @@ _Dernière mise à jour : J0 — Projet initialisé_
 
 | Sprint | Statut | Notes |
 |--------|--------|-------|
-| Sprint 1 — Fondations | 🔴 | |
+| Sprint 1 — Fondations | 🟢 | Terminé — pushé sur GitHub |
 | Sprint 2 — Propriétés | 🔴 | |
 | Sprint 3 — Éditeur | 🔴 | |
 | Sprint 4 — Guide public + QR | 🔴 | |
@@ -22,15 +22,15 @@ _Dernière mise à jour : J0 — Projet initialisé_
 
 ## Sprint 1 — Fondations
 
-- [ ] Setup projet Next.js 14 + TypeScript + Tailwind + shadcn/ui
-- [ ] Setup Supabase (auth + DB)
-- [ ] Migrations SQL schéma complet
-- [ ] Variables d'env configurées
-- [ ] Deploy Vercel initial (même vide)
-- [ ] Page login fonctionnelle
-- [ ] Page signup fonctionnelle
-- [ ] Middleware auth
-- [ ] Layout dashboard avec sidebar
+- [x] Setup projet Next.js 14 + TypeScript + Tailwind + shadcn/ui
+- [x] Setup Supabase (auth + DB)
+- [x] Migrations SQL schéma complet
+- [x] Variables d'env configurées
+- [x] Deploy Vercel initial (même vide)
+- [x] Page login fonctionnelle
+- [x] Page signup fonctionnelle
+- [x] Middleware auth
+- [x] Layout dashboard avec sidebar
 
 ---
 
