@@ -1,7 +1,7 @@
 # progress.md — Suivi de progression
 
 _Claude Code met à jour ce fichier automatiquement après chaque session._
-_Dernière mise à jour : J1 — Sprint 1 terminé_
+_Dernière mise à jour : J2 — Sprint 2 terminé_
 
 ---
 
@@ -11,7 +11,7 @@ _Dernière mise à jour : J1 — Sprint 1 terminé_
 | Sprint | Statut | Notes |
 |--------|--------|-------|
 | Sprint 1 — Fondations | 🟢 | Terminé — pushé sur GitHub |
-| Sprint 2 — Propriétés | 🔴 | |
+| Sprint 2 — Propriétés | 🟢 | Terminé |
 | Sprint 3 — Éditeur | 🔴 | |
 | Sprint 4 — Guide public + QR | 🔴 | |
 | Sprint 5 — Paiement LTD | 🔴 | |
@@ -36,11 +36,11 @@ _Dernière mise à jour : J1 — Sprint 1 terminé_
 
 ## Sprint 2 — Propriétés
 
-- [ ] Page liste des propriétés
-- [ ] Formulaire création propriété
-- [ ] Upload photo Supabase Storage
-- [ ] Génération slug automatique
-- [ ] Page propriété individuelle
+- [x] Page liste des propriétés
+- [x] Formulaire création propriété
+- [x] Upload photo Supabase Storage
+- [x] Génération slug automatique
+- [x] Page propriété individuelle
 
 ---
 
