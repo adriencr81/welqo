@@ -23,7 +23,8 @@
       "Bash(npx shadcn@latest init --defaults)",
       "Bash(npx shadcn@latest add input label card)",
       "Bash(npx tsc:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(cat app/\\\\\\(dashboard\\\\\\)/properties/[id]/page.tsx)"
     ]
   }
 }

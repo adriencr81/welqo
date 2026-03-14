@@ -1,7 +1,7 @@
 # progress.md — Suivi de progression
 
 _Claude Code met à jour ce fichier automatiquement après chaque session._
-_Dernière mise à jour : J2 — Sprint 2 terminé_
+_Dernière mise à jour : J3 — Sprint 3 terminé_
 
 ---
 
@@ -12,7 +12,7 @@ _Dernière mise à jour : J2 — Sprint 2 terminé_
 |--------|--------|-------|
 | Sprint 1 — Fondations | 🟢 | Terminé — pushé sur GitHub |
 | Sprint 2 — Propriétés | 🟢 | Terminé |
-| Sprint 3 — Éditeur | 🔴 | |
+| Sprint 3 — Éditeur | 🟢 | Terminé |
 | Sprint 4 — Guide public + QR | 🔴 | |
 | Sprint 5 — Paiement LTD | 🔴 | |
 | Landing page | 🔴 | |
@@ -46,17 +46,17 @@ _Dernière mise à jour : J2 — Sprint 2 terminé_
 
 ## Sprint 3 — Éditeur de sections
 
-- [ ] Interface ajout de section (modal avec choix type)
-- [ ] Section `wifi`
-- [ ] Section `checkin`
-- [ ] Section `checkout`
-- [ ] Section `rules`
-- [ ] Section `places`
-- [ ] Section `custom`
-- [ ] Section `emergency`
-- [ ] Section `appliances`
-- [ ] Drag & drop (dnd-kit)
-- [ ] Sauvegarde auto (debounce)
+- [x] Interface ajout de section (modal avec choix type)
+- [x] Section `wifi`
+- [x] Section `checkin`
+- [x] Section `checkout`
+- [x] Section `rules`
+- [x] Section `places`
+- [x] Section `custom`
+- [x] Section `emergency`
+- [x] Section `appliances`
+- [x] Drag & drop (dnd-kit)
+- [x] Sauvegarde auto (debounce)
 
 ---
 
