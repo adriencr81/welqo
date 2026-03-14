@@ -97,7 +97,11 @@ _Dernière mise à jour : J6 — Landing page terminée_
 - [x] FAQ (6 questions, details/summary HTML natif)
 - [x] CTA final avec mention early bird
 - [x] Meta tags SEO (title, description, OG)
-- [ ] Page /alternatives/touchstay (post-MVP ou prochaine session)
+- [x] Page /alternatives/touchstay
+- [x] Page /alternatives/styqr (StyQR — concurrent français)
+- [x] Page /alternatives/sunver (Sunver — concurrent avec pricing public)
+- [x] Page /alternatives/hostfully
+- [x] Page /alternatives/stayguide (produit inactif — capte trafic SEO)
 
 ---
 
