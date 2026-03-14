@@ -14,7 +14,13 @@
       "Bash(git commit:*)",
       "Bash(git remote:*)",
       "Bash(git branch:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-turbopack)",
+      "Bash(cd /tmp)",
+      "Bash(npx create-next-app@latest welqo-init --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-turbopack)",
+      "Bash(npx create-next-app@latest welqo-init --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --no-turbopack --no-react-compiler)",
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest init --defaults)"
     ]
   }
 }
