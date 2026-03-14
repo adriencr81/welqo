@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(unzip -o \"/c/Users/gamer/Downloads/files\\(1\\).zip\" -d \"/tmp/livret-zip\")",
+      "Bash(cp /tmp/livret-zip/CLAUDE.md /c/Users/gamer/livret-airbnb/CLAUDE.md)",
+      "Bash(cp /tmp/livret-zip/architecture.md /c/Users/gamer/livret-airbnb/docs/architecture.md)",
+      "Bash(cp /tmp/livret-zip/mvp-scope.md /c/Users/gamer/livret-airbnb/docs/mvp-scope.md)",
+      "Bash(cp /tmp/livret-zip/marketing.md /c/Users/gamer/livret-airbnb/docs/marketing.md)",
+      "Bash(cp /tmp/livret-zip/progress.md /c/Users/gamer/livret-airbnb/docs/progress.md)",
+      "Bash(cp /tmp/livret-zip/product.md /c/Users/gamer/livret-airbnb/docs/product.md)",
+      "Bash(cp /tmp/livret-zip/ux-design.md /c/Users/gamer/livret-airbnb/docs/ux-design.md)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}
