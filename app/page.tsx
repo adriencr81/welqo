@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Check, X, Wifi, MapPin, Clock, Zap, Shield, Smartphone, Star } from 'lucide-react'
+import { Check, X, Wifi, MapPin, Clock, Zap, Shield, Smartphone, Star, ArrowRight } from 'lucide-react'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -102,9 +102,9 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-blue-50 to-white pt-20 pb-24 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-sm font-medium px-4 py-1.5 rounded-full mb-8">
-            <span>🎉</span>
-            <span>Early bird — 50 places à 59€ (prix normal : 79€)</span>
+          <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-8">
+            <span>🔥</span>
+            <span>Plus que 3 places à 59€ — prix remonte à 79€ ensuite</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 leading-tight tracking-tight mb-6">
@@ -118,19 +118,23 @@ export default function LandingPage() {
             <strong className="text-gray-900">Plus jamais le même message à 23h.</strong>
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <div className="flex flex-col items-center gap-3 mb-8">
+            <p className="text-xs font-semibold text-red-600 uppercase tracking-widest">
+              ⏰ Offre limitée — 3 places restantes à ce prix
+            </p>
             <Link
               href="/signup"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl text-lg transition-colors shadow-lg shadow-blue-200"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-bold px-10 py-5 rounded-xl text-xl transition-all shadow-2xl shadow-blue-300 ring-4 ring-blue-100 hover:ring-blue-200"
             >
               Obtenir l&apos;accès à vie — 59€
               <span className="text-blue-200 line-through text-base font-normal">79€</span>
+              <ArrowRight className="h-5 w-5" />
             </Link>
             <Link
               href="/signup"
-              className="w-full sm:w-auto inline-flex items-center justify-center text-gray-600 hover:text-gray-900 font-medium px-6 py-4 transition-colors"
+              className="text-gray-500 hover:text-gray-700 text-sm transition-colors"
             >
-              Essayer gratuitement →
+              Ou essayer gratuitement (sans carte bleue)
             </Link>
           </div>
 
@@ -179,6 +183,55 @@ export default function LandingPage() {
                 Vos voyageurs ont toutes les réponses. Vous dormez tranquille.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="py-16 px-4 sm:px-6 bg-blue-600">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+            En 3 étapes, c&apos;est tout
+          </h2>
+          <p className="text-blue-100 mb-12 text-lg">Moins de 15 minutes, du premier clic au QR code affiché.</p>
+          <div className="grid sm:grid-cols-3 gap-8">
+            {[
+              {
+                num: '1',
+                title: 'Créez votre compte',
+                desc: 'Inscription en 30 secondes. Aucune carte bleue requise.',
+              },
+              {
+                num: '2',
+                title: 'Remplissez vos sections',
+                desc: 'Wi-Fi, arrivée, règles, adresses… Tout est guidé, section par section.',
+              },
+              {
+                num: '3',
+                title: 'Affichez votre QR code',
+                desc: 'Imprimez ou partagez par message. Vos voyageurs ont tout. Vous avez la paix.',
+              },
+            ].map((step, i, arr) => (
+              <div key={step.num} className="relative text-center">
+                <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center text-3xl font-black text-white mx-auto mb-5">
+                  {step.num}
+                </div>
+                {i < arr.length - 1 && (
+                  <div className="hidden sm:block absolute top-8 left-[calc(50%+2.5rem)] w-[calc(100%-5rem)] h-0.5 bg-white/20" />
+                )}
+                <h3 className="font-bold text-white text-lg mb-2">{step.title}</h3>
+                <p className="text-blue-100 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12">
+            <Link
+              href="/signup"
+              className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-blue-600 font-bold px-8 py-4 rounded-xl transition-colors shadow-xl text-lg"
+            >
+              Commencer maintenant
+              <ArrowRight className="h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>
@@ -450,9 +503,10 @@ export default function LandingPage() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Rejoignez les hôtes qui ont arrêté de répondre aux mêmes questions
           </h2>
-          <p className="text-xl text-blue-100 mb-10">
-            Early bird — 50 places à 59€ (prix normal : 79€)
+          <p className="text-xl text-blue-100 mb-2">
+            Il ne reste que <strong className="text-white">3 places à 59€</strong>.
           </p>
+          <p className="text-blue-200 mb-10 text-sm">Le prix remonte à 79€ dès que ces places sont prises.</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
